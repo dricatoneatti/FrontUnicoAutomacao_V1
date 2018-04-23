@@ -1,0 +1,57 @@
+TS Prime - Tsys
+Funcionalidades:
+ 
+1.	CONSULTA DADOS DO CARTÃO:
+•	Limite de crédito
+•	Fundos Disponíveis 
+•	Data de vencimento 
+•	Status geral 
+•	Última 5 transações 
+•	Produto
+•	Serviços contratados
+ 
+2.	CONSULTA NA FATURA:
+•	Consulta da fatura atual
+•	Consulta da fatura antiga 
+ 
+3.	CONSULTA NO AUTORIZADOR: 
+•	Consulta de transações de compra autorizadas criada pela massa
+•	Consulta de transações de saque autorizadas criada pela massa 
+ 
+4.	REVERSÕES:
+•	Reversão de compra 
+ 
+5.	PAGAMENTO:
+•	Fatura - Betch
+ 
+6.	LIMITE
+•	Inserir limite de saque
+ 
+7.	EODs
+•	Consulta á data da Tsys 
+
+
+Front Unico
+Funcionalidades:
+ 
+1.	CONSULTAS CARTÃO:
+•	Identificação de Cliente
+•	Limite de crédito 
+•	Limite de saque
+•	Limite Total
+•	Nome do cliente 
+•	Produto 
+•	Empréstimos 
+ 
+2.	Troca de senha:
+•	Por opção do cliente
+ 
+3.	Empréstimo Pessoal:
+•	Realizar empréstimo
+ 
+
+PR
+Funcionalidade:
+ 
+1.	Gerar cartões online com CPFs aleatórios
+
