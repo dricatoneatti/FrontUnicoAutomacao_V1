@@ -1,0 +1,38 @@
+Configurações gerais:
+
+1.	IDE:
+•	Eclipse IDE for Java Developers - Version: Oxygen.1a Release (4.7.1a);
+
+2.	Navegador:
+•	Chrome - Version 62.0.3202.62 ;
+
+3.	GitHub e Eclipse:
+•	Criar um usuário no GitHub e acessar a URL: https://github.com/dricatoneatti/cogfab, fazer o download do repositorio.
+Passo a passo para instalar o software Git no Eclipse para a integração entre o GitHub e o Eclipse: 
+No menu da IDE, ir em “Help” > “Install new Software” > Em “work with” – “ADD…” onde será digitado nos campos:
+	Name: GitHub
+	Location: http://download.eclipse.org/egit/updates
+Selecione as opções, aceite os termos de uso e instale. 
+
+No novo projeto Java criado, para ativar o comando “commit” é necessário clicar com o botão direito em cima do projeto que você deseja trabalhar com o git, e escolha a opção Team > Share Project.
+ 
+Na próxima janela, clique em “Create”, insira o diretório que foi feito o download do repositório:https://github.com/dricatoneatti/cogfab” > Selecione o Projeto que criou e “Finish”.
+
+Pode reparar que em seu projeto agora tem algumas interrogações, então adicione o projeto ao índice:
+
+•	Clique com o botão direito em cima do projeto, Team >> Add to Index .
+Agora repare que seu projeto ficara marcado com asterisco (necessário commitar)
+No Eclipse, ao  “commitar” o estado atual do seu projeto para o GitHub:
+•	Clique com o botão direito em cima do seu projeto, Team >> Commit… ou Ctrl + #
+Aparecera uma Janela, clique em Ok.
+Surgira uma nova Janela, informe um comentário e clique em commit.
+
+Utilizaremos o Push para subir o projeto para o servidor GitHub:
+Novamente botão direito em cima do projeto Team >> Remote >> Push
+Abrira uma nova janela, clique na opção Add All Branches Spec, Next e Finish.
+Se ocorrer tudo bem, o Push será executado.
+Link de referencia (passo a passo com prints): http://clubedosgeeks.com.br/programacao/desenvolver-com-git-em-eclipse
+
+4.	SELENIUM WEB DRIVER:
+Confirgure a IDE com os JARs e a ultima versão do Chrome WebDriver.
+
