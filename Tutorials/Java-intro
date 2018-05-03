@@ -12,6 +12,7 @@ números inteiros e imprima o maior entre eles.
 4.Crie uma classe java NumeroDecrescente que contenha um método que receba
 um número inteiro e imprima, em ordem decrescente, o valor do número até
 0.
+
 5. Escreva um programa "Loteria" que seleciona uma combinação em uma loteria. Nessa loteria,
 os apostadores podem escolher 6 números (possivelmente repetidos) entre 1 a 49.
 Seu programa deve imprimir uma frase como "Jogue essa combinação - ela o tornará rico!", 
