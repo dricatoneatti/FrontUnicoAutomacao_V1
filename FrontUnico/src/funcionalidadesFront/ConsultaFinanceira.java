@@ -17,11 +17,20 @@ public class ConsultaFinanceira extends Login {
 		WebDriver driver = new ChromeDriver();
 		// Instanciar o site do Front Unico com o WebDriver
 		driver.get("http://10.113.75.9/FUN/Principal.mvc/");
-		
-		//Chamando a classe Login
-		Login user1 = new Login();
-		user1.login("44786992836", "Cog2018@");
-		
+
+		// Efetuando o Login
+		WebElement user = driver.findElement(By.id("LoginModel_Usuario"));
+		user.click();
+		user.sendKeys("44786992836");
+
+		// Efetuando o Login
+		WebElement password = driver.findElement(By.id("LoginModel_Senha"));
+		password.click();
+		password.sendKeys("Cog2018@");
+
+		driver.findElement(By.id("rdDominio")).click();
+		driver.findElement(By.id("btnEfetuarLogin")).click();
+
 		// Identificando a popup onde esta dentro da div de id selecaoHierarquias:
 		WebElement popupUnidade = driver.findElement(By.id("selecaoHierarquias"));
 
@@ -49,19 +58,20 @@ public class ConsultaFinanceira extends Login {
 			driver.findElement(By.xpath("//input[@id='icl_filtroNumeroCartao']")).sendKeys(lista.get(i));
 			driver.findElement(By.xpath("//*[contains(text(), 'OK')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			// Acessando no menu da tabela, o Financeiro
 			driver.findElement(By.xpath("//a[contains(@id,'tabFinanceiro')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 			// Evidencia que recebe o comando das classes: Screenshot e Generator
-			Screenshot.takeSnapShot(driver, "C:\\Users\\640244\\Documents\\IniciativaCSF\\Screenshots\\"
+			Screenshot.takeSnapShot(driver, "C:\\Users\\640244\\Documents\\IniciativaCSF\\Screenshots\\ConsultaFinanceira\\"
 					+ GeneratorScr.dataHoraArquivo() + " ConsultaFinanceira.png");
 
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			// Comando para finalizar atendimento
 			driver.findElement(By.xpath("//a[@id='icl_FinalizarCliente']")).click();
-
+			
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			// Confirmar fim de atendimento
 			driver.findElement(By.xpath("//button[@type='button' and span='Sim']")).click();
 
