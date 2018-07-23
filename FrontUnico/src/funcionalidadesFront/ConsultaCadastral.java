@@ -58,16 +58,16 @@ public class ConsultaCadastral {
 			driver.findElement(By.xpath("//input[@id='icl_filtroNumeroCartao']")).sendKeys(lista.get(i));
 			driver.findElement(By.xpath("//*[contains(text(), 'OK')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-			// Acessando no menu da tabela, o Financeiro
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			// Acessando no menu da tabela, oS Dados cadastrais
 			driver.findElement(By.xpath("//a[contains(@id,'tabDadosCadastrais')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.MINUTES);
 			// Evidencia que recebe o comando das classes: Screenshot e Generator
-			Screenshot.takeSnapShot(driver, "C:\\Users\\640244\\Documents\\IniciativaCSF\\Screenshots\\"
-					+ GeneratorScr.dataHoraArquivo() + " ConsultaFinanceira.png");
+			Screenshot.takeSnapShot(driver, "C:\\Users\\640244\\Documents\\IniciativaCSF\\Screenshots\\ConsultaDadosCartao\\"
+					+ GeneratorScr.dataHoraArquivo() + " ConsultaCadastral.png");
 
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.MINUTES);
 			// Comando para finalizar atendimento
 			driver.findElement(By.xpath("//a[@id='icl_FinalizarCliente']")).click();
 
@@ -84,3 +84,4 @@ public class ConsultaCadastral {
 	}
 
 }
+
