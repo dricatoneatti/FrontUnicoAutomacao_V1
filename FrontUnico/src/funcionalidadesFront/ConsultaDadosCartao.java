@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class IdentificarCliente {
+public class ConsultaDadosCartao {
 	public static void main(String[] args) throws Exception {
 
 		System.setProperty("webdriver.chrome.driver",
@@ -41,7 +41,7 @@ public class IdentificarCliente {
 		driver.findElement(By.id("btnConcluirAutenticacao")).click();
 
 		// Espera
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
 		// Inicio do Teste, onde esta identificando o cliente por pesquisa do numero de
 		// cartao
@@ -58,13 +58,14 @@ public class IdentificarCliente {
 			driver.findElement(By.xpath("//input[@id='icl_filtroNumeroCartao']")).sendKeys(lista.get(i));
 			driver.findElement(By.xpath("//*[contains(text(), 'OK')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
-			// Acessando no menu da tabela, o Financeiro
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.MINUTES);
+			// Acessando no menu da tabela, os dados do cartão
+			driver.findElement(By.xpath("//a[contains(@id,'tabDadosCartao')]")).click();
 			driver.findElement(By.xpath("//a[contains(@id,'tabDadosCartao')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			// Evidencia que recebe o comando das classes: Screenshot e Generator
-			Screenshot.takeSnapShot(driver, "C:\\Users\\640244\\Documents\\IniciativaCSF\\Screenshots\\"
+			Screenshot.takeSnapShot(driver, "C:\\Users\\640244\\Documents\\IniciativaCSF\\Screenshots\\ConsultaDadosCartao\\"
 					+ GeneratorScr.dataHoraArquivo() + " ConsultaDadosCartao.png");
 
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
