@@ -43,14 +43,14 @@ public class AtivarCartao {
 		
 		// Espera
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		// Clicando no menu, na opção "Crédito Pessoal"
+		// Clicando no menu, na opção "Cartões"
 		driver.findElement(By.xpath("//a[contains(@codigomenu, '244')]")).click();
-		// Clicando no menu, na opção "Crédito Pessoal"
+		// Clicando no menu, na opção "Ativar Cartão"
 		driver.findElement(By.xpath("//a[contains(@codigomenu, '261')]")).click();
 				
 		// Criar um Array List que receba os dados da planilha do Excel em que é enviado
 		// para a classe "LerExcel" a TERCEIRA COLUNA com os dados (1).
-		ArrayList<String> lista = LerExcel.leituraCartao(2);
+		ArrayList<String> lista = LerExcel.leituraCartao(0);
 
 		// Para inserir todos os dados coletados pela classe LerExcel, criar um loop que
 		// vá de 0 até o tamanho do array.
