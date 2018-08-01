@@ -49,19 +49,33 @@ public class InativarCartao {
 		driver.findElement(By.xpath("//a[contains(@codigomenu, '258')]")).click();
 	
 		
-				
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);		
 		// Criar um Array List que receba os dados da planilha do Excel em que é enviado
-		// para a classe "LerExcel" a SEGUNDA COLUNA com os dados (1).
-		ArrayList<String> lista = LerExcel.leituraCartao(1);
-
-		// Para inserir todos os dados coletados pela classe LerExcel, criar um loop que
-		// vá de 0 até o tamanho do array.
-		for (int i = 1; i < lista.size(); i++) {
-		driver.findElement(By.xpath("//input[@id='icl_filtroNumeroCartao']")).sendKeys(lista.get(i));
-		driver.findElement(By.xpath("//*[contains(text(), 'OK')]")).click();
+		// para a classe "LerExcel" a SEGUNDA COLUNA com os dados (0).
 		
-		//Acessar o botão inativar
-		driver.findElement(By.id("ict_btnGravar")).click();
+		ArrayList<String> lista = LerExcel.leituraCartao(0);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		// Para inserir todos os dados coletados pela classe LerExcel, criar um loop que
+		// vá de 1 até o tamanho do array.
+		for (int i = 1; i < lista.size(); i++) {	
+			driver.findElement(By.xpath("//input[@id='icl_filtroNumeroCartao']")).sendKeys(lista.get(i));
+			driver.findElement(By.xpath("//*[contains(text(), 'OK')]")).click();
+		
+			driver.findElement(By.xpath("//a[contains(@id,'tabDadosCartao')]")).click();
+			driver.findElement(By.xpath("//input[@id=\"ict_btnGravar\"][value=\"Inativar\"]")).click();
+			
+//TENTATIVA 1 :	
+	/*	Acessar o botão inativar
+	 * WebElement popUpInativar = driver.findElement(By.xpath("//div[@id=\"conteudoDireitoInferior\"]"));
+		popUpInativar.findElement(By.xpath("//input[@id=\"ict_btnGravar\"]")).click();
+	*/
+		 
+//TENTATIVA 2:		
+		/*//Acessar o botão inativar
+		driver.findElement(By.xpath("//input[@value='Inativar']\r\n" + 
+				"")).click();
+		
+		
 		driver.findElement(By.xpath("//button[@type='button' and span='Sim']")).click();
 		driver.findElement(By.xpath("//button[@type='button' and span='OK']")).click();
 		
@@ -70,8 +84,8 @@ public class InativarCartao {
 		driver.findElement(By.xpath("//a[@id='icl_FinalizarCliente']")).click();
 
 		// Confirmar fim de atendimento
-		driver.findElement(By.xpath("//button[@type='button' and span='Sim']")).click();
-		
+		driver.findElement(By.xpath("	")).click();*/
+	
 		
 	}
 }

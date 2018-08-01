@@ -1,27 +1,30 @@
 package funcionalidadesFront;
 
+import static org.openqa.selenium.By.id;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Login {
-	
-	
-	public void login(String user,String password) {
+
+public class Login extends AbstractRobot {
+
+	public void login(String user, String password) {
+
+//Clase AbstractRobot que possui os métodos click e sendKeys
+		By cpf = id("LoginModel_Usuario");
+		click(cpf);
+		sendKeys(cpf, user);
 		
-		WebDriver driver = new ChromeDriver();
+		By senha = id("LoginModel_Senha");
+		click(senha);
+		sendKeys(senha, password);
 		
-	WebElement	user1 = driver.findElement(By.id("LoginModel_Usuario"));
-	user1.click();
-	user1.sendKeys("44786992836");
+		By dominio  = id("rdDominio");
+		click(dominio);
 		
-	WebElement password1 = driver.findElement(By.id("LoginModel_Senha"));
-	password1.click();
-	password1.sendKeys("Cog2018@");
-		
-	driver.findElement(By.id("rdDominio")).click();
-	driver.findElement(By.id("btnEfetuarLogin")).click();
-		
+		By buttonLogin = id("btnEfetuarLogin");
+		click(buttonLogin);	
+
 	}
+	
+	
+
 }

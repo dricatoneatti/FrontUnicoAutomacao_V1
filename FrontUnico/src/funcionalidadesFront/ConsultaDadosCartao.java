@@ -58,7 +58,7 @@ public class ConsultaDadosCartao {
 			driver.findElement(By.xpath("//input[@id='icl_filtroNumeroCartao']")).sendKeys(lista.get(i));
 			driver.findElement(By.xpath("//*[contains(text(), 'OK')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.MINUTES);
+			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 			// Acessando no menu da tabela, os dados do cartão
 			driver.findElement(By.xpath("//a[contains(@id,'tabDadosCartao')]")).click();
 			driver.findElement(By.xpath("//a[contains(@id,'tabDadosCartao')]")).click();

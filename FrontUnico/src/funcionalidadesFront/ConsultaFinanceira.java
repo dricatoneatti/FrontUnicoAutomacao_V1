@@ -62,16 +62,16 @@ public class ConsultaFinanceira extends Login {
 			// Acessando no menu da tabela, o Financeiro
 			driver.findElement(By.xpath("//a[contains(@id,'tabFinanceiro')]")).click();
 
-			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 			// Evidencia que recebe o comando das classes: Screenshot e Generator
 			Screenshot.takeSnapShot(driver, "C:\\Users\\640244\\Documents\\IniciativaCSF\\Screenshots\\ConsultaFinanceira\\"
 					+ GeneratorScr.dataHoraArquivo() + " ConsultaFinanceira.png");
 
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			// Comando para finalizar atendimento
 			driver.findElement(By.xpath("//a[@id='icl_FinalizarCliente']")).click();
 			
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			// Confirmar fim de atendimento
 			driver.findElement(By.xpath("//button[@type='button' and span='Sim']")).click();
 
